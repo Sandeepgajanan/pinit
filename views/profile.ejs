@@ -1,0 +1,49 @@
+<% include ./partials/header.ejs %>
+<div
+  class="profile w-full min-h-screen bg-zinc-800 text-white px-4 sm:px-6 lg:px-8"
+>
+  <form
+    hidden
+    action="/fileupload"
+    id="uploadform"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input type="file" name="image" />
+  </form>
+  <div class="profdets flex flex-col items-center justify-center pt-1">
+    <div class="relative">
+      <span
+        class="w-8 h-8 bg-zinc-500 absolute right-0 bottom-0 rounded-full flex items-center justify-center cursor-pointer z-10"
+        id="uploadicon"
+      >
+        <i class="ri-pencil-fill text-white"></i>
+      </span>
+      <div class="w-28 h-28 bg-zinc-200 rounded-full mt-[10px] overflow-hidden">
+        <img
+          src="/images/uploads/<%= user.profileImage %>"
+          class="w-full h-full object-cover"
+          alt="Profile Image"
+        />
+      </div>
+    </div>
+
+    <h1 class="text-3xl font-semibold mt-4"><%= user.username %></h1>
+    <h3 class="text-md">@<%= user.email %></h3>
+    <a href="/add" class="px-10 py-2 bg-red-600 mt-5 rounded-lg">Add Photo</a>
+    <a href="/show/posts" class="text-zinc-500">Your uploaded pins</a>
+    <h5><%= user.posts.length %> Pins</h5>
+  </div>
+</div>
+
+<script>
+  document.querySelector("#uploadicon").addEventListener("click", function () {
+    document.querySelector("#uploadform input").click();
+  });
+  document
+    .querySelector("#uploadform input")
+    .addEventListener("change", function () {
+      document.querySelector("#uploadform").submit();
+    });
+</script>
+<% include ./partials/footer.ejs %>

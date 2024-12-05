@@ -1,0 +1,63 @@
+<% include ./partials/header.ejs %>
+<div
+  class="w-full min-h-screen bg-zinc-300 flex items-center justify-center px-4"
+>
+  <div
+    class="w-full sm:w-[80vw] md:w-[60vw] lg:w-[40vw] xl:w-[32vw] bg-white px-6 sm:px-10 py-10 rounded-[10px]"
+  >
+    <img
+      src="https://pngimg.com/d/pinterest_PNG66.png"
+      class="mt-1 mb-3 w-[50px] h-[30px] mx-auto rounded-full"
+      alt=""
+    />
+    <h1
+      class="text-3xl text-center leading-none tracking-tighter capitalize font-semibold text-zinc-700"
+    >
+      Welcome to Pinterest.
+    </h1>
+    <h3 class="text-center mt-2">Find new ideas to try</h3>
+    <form action="/register" method="post" class="space-y-4">
+      <input
+        type="email"
+        class="block w-full px-3 py-2 border-2 rounded-[10px]"
+        name="email"
+        placeholder="Email"
+      />
+      <input
+        type="text"
+        class="block w-full px-3 py-2 border-2 rounded-[10px]"
+        name="username"
+        placeholder="Username"
+      />
+      <input
+        type="number"
+        class="block w-full px-3 py-2 border-2 rounded-[10px]"
+        name="contact"
+        placeholder="Contact Number"
+      />
+      <input
+        type="password"
+        class="block w-full px-3 py-2 border-2 rounded-[10px]"
+        name="password"
+        placeholder="Password"
+      />
+      <input
+        type="submit"
+        class="block w-full px-3 py-2 mt-2 border-2 bg-red-600 rounded-full text-white"
+        value="Create Account"
+      />
+      <p class="text-center text-zinc-500 mt-2 text-xs">
+        By continuing, you agree to Pinterest's
+        <a href="" class="font-semibold">Terms of Service</a> and acknowledge
+        that you've read our
+        <a href="" class="font-semibold">Privacy Policy.</a>
+        <a href="" class="font-semibold">Notice at collection.</a>
+      </p>
+      <p class="text-center text-zinc-500 mt-2 text-xs">
+        Already a member?
+        <a href="/" class="font-semibold">Login</a>
+      </p>
+    </form>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>
